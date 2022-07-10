@@ -1,9 +1,20 @@
 package pl.edu.wszib.orders.consoleui;
 
+import pl.edu.wszib.orders.api.order.OrderFacadeApi;
+import pl.edu.wszib.orders.api.product.ProductFacadeApi;
+
 import java.util.Scanner;
 
 public class ConsoleUI {
+    private final OrderFacadeApi orderFacadeApi;
+    private final ProductFacadeApi productFacadeApi;
     private final Scanner scanner = new Scanner(System.in);
+
+    public ConsoleUI(final OrderFacadeApi orderFacadeApi,
+                     final ProductFacadeApi productFacadeApi) {
+        this.orderFacadeApi = orderFacadeApi;
+        this.productFacadeApi = productFacadeApi;
+    }
 
     public void run() {
         System.out.println("Wprowadź tekst: ");
